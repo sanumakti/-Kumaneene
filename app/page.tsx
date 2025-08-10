@@ -83,7 +83,7 @@ export default function Page() {
             <GlowPanel className="mt-6">
               <div className="space-y-3">
                 <div className="font-semibold text-blue-200">Contract Address</div>
-                <CopyAddress comingSoon />
+                <CopyAddress address="0x14a79d0de9796d66cff3f35aa3e76f60f9e8fc5f" comingSoon={false} />
               </div>
             </GlowPanel>
           </div>
@@ -168,7 +168,11 @@ function BuyCard() {
             className="mt-4 border border-blue-400/30 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20"
             asChild
           >
-            <a href="#" target="_blank" rel="noreferrer">
+            <a
+              href="https://ape.store/base/0x14a79d0de9796d66cff3f35aa3e76f60f9e8fc5f"
+              target="_blank"
+              rel="noreferrer"
+            >
               Buy Now
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
@@ -195,7 +199,11 @@ function DexScreenerCard() {
             className="mt-4 border border-blue-400/30 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20"
             asChild
           >
-            <a href="https://dexscreener.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://dexscreener.com/base/0xF51768511e9388A46F23028a417637c37021C818"
+              target="_blank"
+              rel="noreferrer"
+            >
               View Charts
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
