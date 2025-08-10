@@ -47,7 +47,7 @@ export default function Page() {
               className="group border border-blue-400/30 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20"
               asChild
             >
-              <a href="https://x.com" target="_blank" rel="noreferrer">
+              <a href="https://x.com/BasedKumaneene" target="_blank" rel="noreferrer">
                 <Twitter className="mr-2 h-5 w-5" />
                 <span>Follow on X</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -59,7 +59,7 @@ export default function Page() {
               className="group border-blue-400/30 text-blue-200 hover:bg-blue-500/10 bg-transparent"
               asChild
             >
-              <a href="https://t.me" target="_blank" rel="noreferrer">
+              <a href="https://t.me/basedkumaneene" target="_blank" rel="noreferrer">
                 <Send className="mr-2 h-5 w-5" />
                 <span>Join Telegram</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
