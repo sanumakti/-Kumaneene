@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowRight, Plus, Send, Twitter } from "lucide-react"
+import { ArrowRight, Send, Twitter, ShoppingCart, TrendingUp } from "lucide-react"
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from "@/lib/utils"
 import GlowPanel from "@/components/glow-panel"
@@ -117,28 +117,8 @@ export default function Page() {
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <GlowCard
-              title="1.5% Supply to Vitalik"
-              description="Supporting the Ethereum ecosystem and its creator"
-              href="#"
-            />
-            <GlowCard
-              title="1.5% Supply to Chibawan"
-              description="Supporting Neiro and Cocoro adopters – friends of Kumaneene"
-              href="#"
-            />
-          </div>
-
-          <div className="mt-8 flex justify-center">
-            <Button
-              className="group border border-blue-400/30 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20"
-              asChild
-            >
-              <a href="https://x.com" target="_blank" rel="noreferrer">
-                <span>View Original Post on X</span>
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
-            </Button>
+            <BuyCard />
+            <DexScreenerCard />
           </div>
         </GlowPanel>
       </section>
@@ -152,13 +132,11 @@ export default function Page() {
               dotClass="bg-blue-500"
               name="かぼすママ (@kabosumama)"
               quote={'"Sorry about that. My kids are all well-behaved (good boys/girls) 🐶✨"'}
-              link="#"
             />
             <SourceCard
               dotClass="bg-blue-400"
               name="かち (@kumaneene)"
               quote={'"Are all dogs able to ride kayaks so well? Are the dogs of the Kabosu family all well‑behaved?"'}
-              link="#"
             />
           </div>
         </GlowPanel>
@@ -174,32 +152,51 @@ export default function Page() {
   )
 }
 
-function GlowCard({
-  title = "Card title",
-  description = "Card description",
-  href = "#",
-}: {
-  title?: string
-  description?: string
-  href?: string
-}) {
+function BuyCard() {
   return (
     <Card className="relative overflow-hidden border-blue-400/20 bg-blue-500/10 p-6 backdrop-blur">
       <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-blue-400/10 blur-2xl" aria-hidden />
       <div className="flex items-start gap-4">
         <div className="flex h-12 w-12 items-center justify-center rounded-full border border-blue-400/30 bg-blue-500/20">
-          <Plus className="h-6 w-6 text-blue-200" />
+          <ShoppingCart className="h-6 w-6 text-blue-200" />
         </div>
         <div>
-          <div className="text-lg font-semibold text-blue-200">{title}</div>
-          <p className="mt-1 text-sm text-white/80">{description}</p>
+          <div className="text-lg font-semibold text-blue-200">Buy Kumaneene</div>
+          <p className="mt-1 text-sm text-white/80">Get your Kumaneene tokens now and join the community</p>
           <Button
             size="sm"
             className="mt-4 border border-blue-400/30 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20"
             asChild
           >
-            <a href={href} target="_blank" rel="noreferrer">
-              View Transaction
+            <a href="#" target="_blank" rel="noreferrer">
+              Buy Now
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </Card>
+  )
+}
+
+function DexScreenerCard() {
+  return (
+    <Card className="relative overflow-hidden border-blue-400/20 bg-blue-500/10 p-6 backdrop-blur">
+      <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-blue-400/10 blur-2xl" aria-hidden />
+      <div className="flex items-start gap-4">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-blue-400/30 bg-blue-500/20">
+          <TrendingUp className="h-6 w-6 text-blue-200" />
+        </div>
+        <div>
+          <div className="text-lg font-semibold text-blue-200">View on DexScreener</div>
+          <p className="mt-1 text-sm text-white/80">Check live price, charts, and trading data</p>
+          <Button
+            size="sm"
+            className="mt-4 border border-blue-400/30 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20"
+            asChild
+          >
+            <a href="https://dexscreener.com" target="_blank" rel="noreferrer">
+              View Charts
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
@@ -213,12 +210,10 @@ function SourceCard({
   dotClass = "bg-blue-400",
   name = "Source name",
   quote = "Quote",
-  link = "#",
 }: {
   dotClass?: string
   name?: string
   quote?: string
-  link?: string
 }) {
   return (
     <Card className="border-blue-400/20 bg-blue-500/10 p-6 backdrop-blur">
@@ -227,16 +222,6 @@ function SourceCard({
         <div className="space-y-2">
           <div className="font-semibold text-blue-200">{name}</div>
           <p className="text-white/80">{quote}</p>
-          <Button
-            size="sm"
-            variant="ghost"
-            className="px-0 text-blue-200 hover:bg-blue-500/10 hover:text-white"
-            asChild
-          >
-            <a href={link} target="_blank" rel="noreferrer">
-              View Original Post <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
         </div>
       </div>
     </Card>
