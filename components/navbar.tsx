@@ -8,7 +8,7 @@ export default function Navbar() {
           <div className="relative">
             <Image
               src="/images/mascot.png"
-              alt="Kumaneene blue dog mascot"
+              alt="Kumaneene coin logo"
               width={28}
               height={28}
               priority

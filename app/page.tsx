@@ -94,7 +94,7 @@ export default function Page() {
               <div className="mx-auto flex h-72 w-72 items-center justify-center rounded-full bg-gradient-to-b from-blue-500/30 to-blue-500/10 shadow-[0_0_80px_rgba(59,130,246,0.35)]">
                 <Image
                   src="/images/mascot.png"
-                  alt="Kumaneene blue dog mascot"
+                  alt="Kumaneene coin mascot"
                   width={220}
                   height={220}
                   priority
@@ -164,7 +164,7 @@ export default function Page() {
         </GlowPanel>
 
         <footer className="mt-10 flex flex-col items-center gap-3 text-center text-white/80">
-          <Image src="/images/mascot.png" alt="Kumaneene mascot" width={40} height={40} className="rounded-full" />
+          <Image src="/images/mascot.png" alt="Kumaneene coin logo" width={40} height={40} className="rounded-full" />
           <p className="text-sm">🐕 Kumaneene — Making history with the Doge family! 🚀</p>
         </footer>
       </section>
