@@ -1,7 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-
-@custom-variant dark (&:is(.dark *));
+@import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
   --background: oklch(1 0 0);
@@ -75,6 +73,16 @@
 }
 
 @theme inline {
+  --font-sans: var(--font-poppins);
+
+  /* Added custom colors for AI Pet Generator */
+  --color-base-blue: #0052ff;
+  --color-pastel-pink: #ffb6c1;
+  --color-pastel-yellow: #ffffe0;
+  --color-soft-pink: #fff0f5;
+  --color-soft-yellow: #fffacd;
+
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -120,4 +128,80 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Added custom animations for floating elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes paw-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px) rotate(10deg);
+  }
+  75% {
+    transform: translateY(10px) translateX(-5px) rotate(-10deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-paw-float {
+  animation: paw-float 8s ease-in-out infinite;
+}
+
+/* Added gradient background with paw print pattern */
+.hero-gradient {
+  background: linear-gradient(135deg, #0052ff 0%, #ffb6c1 100%);
+  position: relative;
+}
+
+.hero-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-size: 100px 100px, 150px 150px, 120px 120px;
+  pointer-events: none;
+}
+
+/* Added bouncy button hover effects */
+.btn-bouncy {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn-bouncy:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 82, 255, 0.3);
 }

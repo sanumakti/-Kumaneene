@@ -1,33 +1,29 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Poppins } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "Kumaneene",
-  description:
-    "Kumaneene friends with the doge family. A new doggo who's been spotted interacting with Kabosumama on X! Let's spread positivity and support the community — Do Only Good Everyday.",
-  icons: {
-    icon: "/favicon.ico",
-  },
-    generator: 'v0.dev'
+  title: "AI Pet Generator - Generate, Chat, and Mint Your AI Pet",
+  description: "Create unique AI pets, chat with them, and mint NFTs on Base Network",
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en" className={poppins.variable}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   )
 }
